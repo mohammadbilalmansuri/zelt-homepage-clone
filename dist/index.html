@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zelt HR - More than HR software</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+  </head>
+
+  <body class="w-screen h-screen overflow-hidden text-[#121718] relative">
+    <header
+      class="z-[99] md:fixed md:max-w-fit w-full absolute md:top-4 md:left-1/2 md:-translate-x-1/2 md:bg-white/50 md:rounded-xl md:p-2 md:pl-5 flex items-center justify-between gap-7 md:backdrop-blur-sm p-5"
+    >
+      <div class="w-16 h-7 md:-mt-1">
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 28">
+          <path
+            d="M37.95 5.3v21.14h-1.71v.92h10.75v-.92h-1.7V.28l-9.44 3.25 2.1 1.77Z"
+            fill="#121718"
+          />
+          <path
+            d="M36.27 24.1c-1.54 2.32-4 3.62-7.42 3.62-5.18 0-9.44-3.54-9.44-9.14 0-5.27 3.6-9.64 9.48-9.64 3.45 0 5.84 1.99 5.84 4.62 0 3-2.35 5.64-6.76 7.26 2.1 2.02 4.74 3.36 7.2 3.36.37 0 .73-.04 1.06-.11l.04.04Zm-8.75-3.74a6.6 6.6 0 0 0 1.55-5.59c-.44-2.55-2.1-4.3-3.47-4.3-.95 0-1.5.79-1.5 2.13 0 2.89 1.35 5.57 3.42 7.76ZM10.59 10.5.06 27.36h17.63V18.8h-.03a16.58 16.58 0 0 1-2.18 3.68c-2.68 3.32-5.81 4.04-7.36 4.04L18.58 9.67H1.6v8.45h.04c.79-1.54 1.6-2.83 2.43-3.9 2.39-2.95 5.15-3.7 6.52-3.72ZM63 24.04c-1.36 2.13-3.79 3.68-7.16 3.68-4.38 0-6.1-2.53-6.1-7.22v-9.92h-3.22v-.04l10.56-8.2v7.33h5.18v.9h-5.18v8.09c0 4.19 1 5.74 3.71 5.74.81 0 1.44-.11 2.17-.4l.04.04Z"
+            fill="#121718"
+          />
+        </svg>
+      </div>
+
+      <div class="hidden md:flex gap-6 items-center">
+        <a class="transition-all duration-200 hover:text-orange-300" href="#"
+          >Product</a
+        >
+        <a class="transition-all duration-200 hover:text-orange-300" href="#"
+          >Resources</a
+        >
+        <a class="transition-all duration-200 hover:text-orange-300" href="#"
+          >Pricing</a
+        >
+        <a class="transition-all duration-200 hover:text-orange-300" href="#"
+          >Login</a
+        >
+        <a
+          class="bg-orange-300 py-2 px-4 rounded-lg transition-all duration-200 hover:bg-orange-300/85 min-w-32"
+          href="#"
+          >Book a demo</a
+        >
+      </div>
+
+      <button
+        id="popup-open"
+        class="md:hidden block bg-orange-300 rounded-md pt-5 px-2 transition-all duration-200 hover:bg-orange-300/85"
+      >
+        <span class="text-5xl font-bold leading-[0]">&Congruent;</span>
+      </button>
+    </header>
+
+    <div
+      id="popup"
+      class="z-[100] md:hidden bg-white w-screen h-screen fixed overflow-hidden hidden"
+    >
+      <div class="flex flex-col gap-16 p-5">
+        <div class="flex justify-between items-center">
+          <div class="w-16 h-7">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 63 28"
+            >
+              <path
+                d="M37.95 5.3v21.14h-1.71v.92h10.75v-.92h-1.7V.28l-9.44 3.25 2.1 1.77Z"
+                fill="#121718"
+              />
+              <path
+                d="M36.27 24.1c-1.54 2.32-4 3.62-7.42 3.62-5.18 0-9.44-3.54-9.44-9.14 0-5.27 3.6-9.64 9.48-9.64 3.45 0 5.84 1.99 5.84 4.62 0 3-2.35 5.64-6.76 7.26 2.1 2.02 4.74 3.36 7.2 3.36.37 0 .73-.04 1.06-.11l.04.04Zm-8.75-3.74a6.6 6.6 0 0 0 1.55-5.59c-.44-2.55-2.1-4.3-3.47-4.3-.95 0-1.5.79-1.5 2.13 0 2.89 1.35 5.57 3.42 7.76ZM10.59 10.5.06 27.36h17.63V18.8h-.03a16.58 16.58 0 0 1-2.18 3.68c-2.68 3.32-5.81 4.04-7.36 4.04L18.58 9.67H1.6v8.45h.04c.79-1.54 1.6-2.83 2.43-3.9 2.39-2.95 5.15-3.7 6.52-3.72ZM63 24.04c-1.36 2.13-3.79 3.68-7.16 3.68-4.38 0-6.1-2.53-6.1-7.22v-9.92h-3.22v-.04l10.56-8.2v7.33h5.18v.9h-5.18v8.09c0 4.19 1 5.74 3.71 5.74.81 0 1.44-.11 2.17-.4l.04.04Z"
+                fill="#121718"
+              />
+            </svg>
+          </div>
+
+          <button
+            id="popup-close"
+            class="bg-orange-300 rounded-md pt-5 px-2 transition-all duration-200 hover:bg-orange-300/85"
+          >
+            <span class="text-5xl font-bold leading-[0]">&times;</span>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-7">
+          <a
+            class="text-3xl transition-all duration-200 hover:text-orange-300"
+            href="#"
+            >Product</a
+          >
+          <a
+            class="text-3xl transition-all duration-200 hover:text-orange-300"
+            href="#"
+            >Resources</a
+          >
+          <a
+            class="text-3xl transition-all duration-200 hover:text-orange-300"
+            href="#"
+            >Pricing</a
+          >
+          <div class="flex gap-5 mt-5">
+            <a
+              class="text-xl bg-orange-300 py-3 px-6 rounded-lg transition-all duration-200 hover:bg-orange-300/85"
+              href="#"
+              >Book a demo</a
+            >
+            <a
+              class="text-xl bg-transparent border border-black py-3 px-6 rounded-lg transition-all duration-200 hover:bg-orange-300/85"
+              href="#"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="relative w-full h-full overflow-hidden">
+      <section
+        id="section1"
+        class="bg-gradient-to-r from-[#E3DFDC] to-[#E4E0DD] w-screen h-[200vh] flex flex-col items-center"
+      >
+        <div
+          class="z-10 flex flex-col gap-5 items-center absolute text-center top-[30vh] px-5"
+        >
+          <h1 class="xl:text-8xl text-7xl">More than HR<br />software</h1>
+          <p class="text-[1.5rem]">
+            The HR Software for modern<br />companies to manage HR, Finance & IT
+          </p>
+        </div>
+        <canvas></canvas>
+        <button
+          id="scroll-down"
+          class="md:block hidden z-[100] absolute top-[90vh] left-5 p-3 fill-black bg-white/75 rounded-full shadow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+            />
+          </svg>
+        </button>
+      </section>
+
+      <section
+        id="section2"
+        class="relative z-10 bg-transparent w-screen h-screen flex flex-col justify-center items-center"
+      >
+        <div class="text-center px-5 flex flex-col gap-5 items-center">
+          <h2 class="md:text-[5.5rem] text-6xl">Less is more</h2>
+          <p class="text-[1.5rem] md:max-w-[60%]">
+            Now you can run all your people operations in one HR software and
+            put an end to piecemeal tooling.
+          </p>
+        </div>
+      </section>
+
+      <div class="w-screen h-screen relative bg-transparent"></div>
+
+      <section
+        id="section3"
+        class="-mt-0.5 relative z-10 bg-gradient-to-r from-[#E3DFDC] to-[#E4E0DD] w-screen pb-32 flex flex-col items-center"
+      >
+        <div class="px-5 flex flex-col gap-8 items-center md:max-w-[50%]">
+          <div class="text-center flex flex-col items-center gap-5">
+            <h2 class="md:text-6xl text-5xl">Work with the best HR software</h2>
+            <p class="text-[1.5rem] md:px-0 px-5">
+              Save up to 500 hours a year using process automation
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 md:px-20 px-7 gap-7">
+            <img src="./assets/images/cirtificate1.png" alt="Certificate 1" />
+            <img src="./assets/images/cirtificate1.png" alt="Certificate 2" />
+            <img src="./assets/images/cirtificate1.png" alt="Certificate 3" />
+            <img src="./assets/images/cirtificate1.png" alt="Certificate 4" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section4"
+        class="w-screen py-12 flex flex-col justify-center items-center border-b border-b-[#e3deda]"
+      >
+        <div class="text-center flex flex-col gap-7 items-center">
+          <p class="text-[1.5rem] md:px-0 px-5">
+            Powering modern people ops teams around the world
+          </p>
+          <div
+            class="marquee flex overflow-hidden whitespace-nowrap gap-0 items-center"
+          >
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo1"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo2"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo3"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo4"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo5"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo6"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo7"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo8"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo9"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo10"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo11"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo12"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo13"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo14"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo15"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo16"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo17"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo18"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo19"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo20"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo21"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo22"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo23"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo24"
+              class="h-12"
+            />
+            <img
+              src="./assets/images/twine-logo.svg"
+              alt="logo25"
+              class="h-12"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section5"
+        class="w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div class="flex flex-col gap-10">
+          <h2 class="md:pl-10 xl:text-[5.5rem] lg:text-7xl md:6xl text-5xl">
+            Product Overview
+          </h2>
+          <div
+            class="bg-[#F6F3EF] w-full xl:px-10 md:px-5 xl:min-h-[34rem] lg:min-h-[28rem] rounded-xl flex lg:flex-row flex-col gap-5 lg:gap-10 xl:gap-16 items-center lg:pt-0 pt-5 lg:pb-0 pb-10"
+          >
+            <div
+              id="tab-titles"
+              class="flex lg:flex-col flex-row flex-wrap lg:gap-2 gap-3 lg:p-0 p-5"
+            ></div>
+            <div
+              id="tab-content"
+              class="flex lg:flex-row flex-col items-center gap-5 lg:gap-10 xl:gap-20"
+            >
+              <div
+                class="lg:flex lg:justify-center lg:w-[45%] w-auto lg:px-0 px-5"
+              >
+                <img src="" alt="" />
+              </div>
+              <div
+                class="lg:w-[55%] w-auto lg:px-0 px-7 flex flex-col lg:gap-7 gap-5"
+              >
+                <h3 class="xl:text-6xl text-5xl"></h3>
+                <p class="-mt-2 text-xl text-black/70"></p>
+                <a
+                  class="flex justify-center items-center w-36 rounded-lg h-10 bg-black/80 text-white"
+                  href=""
+                  >Find out more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section6"
+        class="w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div class="flex flex-col lg:gap-24 md:gap-20 gap-16">
+          <h2 class="xl:text-[5.5rem] md:text-7xl text-6xl text-center">
+            Why Zelt?
+          </h2>
+          <div class="flex md:flex-row flex-col-reverse gap-10 items-center">
+            <div
+              class="texts-div md:w-1/2 w-auto md:px-0 px-5 flex flex-col gap-5 lg:pr-24"
+            >
+              <h3 class="xl:text-6xl text-5xl">People-centric</h3>
+              <p class="text-xl">
+                Create a better employee experience by building your HR software
+                and processes around your people. With self-service and seamless
+                approvals, your team does not have to jump through hoops to get
+                the resources they need like with other HR software.
+              </p>
+            </div>
+            <div class="md:w-1/2 w-auto">
+              <video
+                autoplay
+                muted
+                loop
+                src="./assets/videos/people-centric.mp4"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section7"
+        class="w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div class="flex md:flex-row flex-col gap-10 items-center">
+          <div class="md:w-1/2 w-auto">
+            <video
+              autoplay
+              muted
+              loop
+              src="./assets/videos/enabling.mp4"
+            ></video>
+          </div>
+          <div
+            class="texts-div md:w-1/2 w-auto flex flex-col gap-5 lg:pl-24 md:px-0 px-5"
+          >
+            <h3 class="xl:text-6xl text-5xl">Enabling</h3>
+            <p class="text-xl">
+              People operations is about providing your team with the right HR
+              software and support to get the job done. Zelt makes pay,
+              benefits, software, hardware, time off and reviews available in a
+              single place, as simple as drag and drop. So your team can focus
+              on their job rather than learning internal processes and
+              navigating HR software.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section8"
+        class="w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div class="flex md:flex-row flex-col-reverse gap-10 items-center">
+          <div
+            class="texts-div md:w-1/2 w-auto flex flex-col gap-5 lg:pr-24 md:px-0 px-5"
+          >
+            <h3 class="xl:text-6xl text-5xl">Automated</h3>
+            <p class="text-xl">
+              Automate the busy work in your day-to-day operations so people can
+              get home on time more often. With Zelt you can save time
+              onboarding and offboarding, entering employee information by hand,
+              buying and shipping laptops, creating accounts in work apps, and
+              much more.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-auto">
+            <video
+              autoplay
+              muted
+              loop
+              src="./assets/videos/automated.mp4"
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section9"
+        class="md:block hidden w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div
+          class="flex md:flex-row flex-col xl:gap-20 lg:gap-16 md:gap-12 gap-10 bg-[#2f2f2f] xl:px-16 md:px-12 px-8 md:py-12 py-8 rounded-xl overflow-y-hidden items-stretch"
+        >
+          <div
+            class="dd-left-div md:w-1/2 hidden md:flex flex-col gap-5 lg:max-h-80 md:max-h-[22rem]"
+          >
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-1"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-2"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-3"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-4"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-5"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-6"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-7"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+          </div>
+
+          <div class="md:hidden flex flex-col gap-5">
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-1"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-2"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-3"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-4"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-5"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-6"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-7"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+          </div>
+
+          <div
+            class="texts-div md:w-1/2 flex flex-col justify-center gap-5 text-white"
+          >
+            <h3 class="xl:text-6xl text-5xl">Data-driven</h3>
+            <p class="text-xl">
+              Get real-time insights into your workforce, headcount costs,
+              device fleet security and tool stack to make better decisions.
+              With Zelt HR you can order, configure, ship and monitor devices
+              with a few clicks and manage access to and monitor usage of apps
+              centrally.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section9-mobile"
+        class="md:hidden w-screen xl:py-24 lg:py-20 py-16 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div
+          class="flex md:flex-row flex-col xl:gap-20 lg:gap-16 md:gap-12 gap-10 bg-[#2f2f2f] xl:px-16 md:px-12 px-8 md:py-12 py-8 rounded-xl overflow-y-hidden items-stretch"
+        >
+          <div class="dd-top-div md:hidden flex flex-col gap-5">
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-1"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-2"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-3"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-4"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-5"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-6"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+            <div
+              class="flex gap-2 lg:gap-3 items-center lg:p-3 p-2 rounded-xl bg-white"
+            >
+              <img
+                class="w-10"
+                src="./assets/images/small-icon.png"
+                alt="sm-icon-7"
+              />
+              <p class="text-lg">2 new joiners onboarding this week</p>
+            </div>
+          </div>
+
+          <div
+            class="texts-div md:w-1/2 flex flex-col justify-center gap-5 text-white"
+          >
+            <h3 class="xl:text-6xl text-5xl">Data-driven</h3>
+            <p class="text-xl">
+              Get real-time insights into your workforce, headcount costs,
+              device fleet security and tool stack to make better decisions.
+              With Zelt HR you can order, configure, ship and monitor devices
+              with a few clicks and manage access to and monitor usage of apps
+              centrally.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section10"
+        class="w-screen xl:pt-24 lg:pt-20 pt-16 xl:pb-36 lg:pb-32 pb-28 2xl:px-[12%] xl:px-[10%] lg:px-[6%] md:px-[4%] px-5"
+      >
+        <div class="flex md:flex-row flex-col-reverse gap-5 items-center">
+          <div
+            class="texts-div md:w-1/2 w-auto flex flex-col gap-5 lg:pr-32 md:px-0 px-5"
+          >
+            <h3 class="xl:text-6xl text-5xl">Simple</h3>
+            <p class="text-xl">
+              When you keep things simple, less goes wrong and there is less to
+              maintain and get distracted by. With Zelt HR, you can use fewer
+              tools and simpler processes to promote reliability, engagement and
+              lots of up time.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-auto">
+            <img src="./assets/images/simple.png" alt="Simple" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section11"
+        class="w-screen 2xl:py-28 lg:py-24 py-20 2xl:px-[12%] xl:px-[10%] md:px-[4%] px-5 bg-[#F6F3EF]"
+      >
+        <div class="flex flex-col 2xl:gap-28 xl:gap-24 lg:gap-20 gap-16">
+          <div class="flex sm:flex-row flex-col xl:gap-8 gap-5">
+            <div
+              class="bg-white xl:p-10 p-5 flex flex-col xl:gap-10 gap-5 items-center rounded-xl"
+            >
+              <div
+                class="flex xl:flex-row flex-col xl:gap-5 gap-3 items-center"
+              >
+                <img
+                  class="xl:w-24 w-20 rounded-xl"
+                  src="./assets/images/testimonial-1.jpeg"
+                  alt="Testimonial 1"
+                />
+                <div class="flex flex-col gap-1 xl:text-left text-center">
+                  <h4 class="xl:text-3xl text-2xl leading-tight">
+                    Felix Leuschner
+                  </h4>
+                  <p class="text-lg leading-tight">
+                    Founder of Drover (sold to Cazoo)
+                  </p>
+                </div>
+              </div>
+              <p class="lg:text-lg text-base xl:text-left text-center">
+                The burden on people operations has increased signicantly in the
+                last few years. Zelt helps automate rather than just digitally
+                pushing paper from one desk to another.
+              </p>
+            </div>
+            <div
+              class="bg-white xl:p-10 p-5 flex flex-col xl:gap-10 gap-5 items-center rounded-xl"
+            >
+              <div
+                class="flex xl:flex-row flex-col xl:gap-5 gap-3 items-center"
+              >
+                <img
+                  class="xl:w-24 w-20 rounded-xl"
+                  src="./assets/images/testimonial-1.jpeg"
+                  alt="Testimonial 1"
+                />
+                <div class="flex flex-col gap-1 xl:text-left text-center">
+                  <h4 class="xl:text-3xl text-2xl leading-tight">
+                    Felix Leuschner
+                  </h4>
+                  <p class="text-lg leading-tight">
+                    Founder of Drover (sold to Cazoo)
+                  </p>
+                </div>
+              </div>
+              <p class="lg:text-lg text-base xl:text-left text-center">
+                The burden on people operations has increased signicantly in the
+                last few years. Zelt helps automate rather than just digitally
+                pushing paper from one desk to another.
+              </p>
+            </div>
+            <div
+              class="bg-white xl:p-10 p-5 flex flex-col xl:gap-10 gap-5 items-center rounded-xl"
+            >
+              <div
+                class="flex xl:flex-row flex-col xl:gap-5 gap-3 items-center"
+              >
+                <img
+                  class="xl:w-24 w-20 rounded-xl"
+                  src="./assets/images/testimonial-1.jpeg"
+                  alt="Testimonial 1"
+                />
+                <div class="flex flex-col gap-1 xl:text-left text-center">
+                  <h4 class="xl:text-3xl text-2xl leading-tight">
+                    Felix Leuschner
+                  </h4>
+                  <p class="text-lg leading-tight">
+                    Founder of Drover (sold to Cazoo)
+                  </p>
+                </div>
+              </div>
+              <p class="lg:text-lg text-base xl:text-left text-center">
+                The burden on people operations has increased signicantly in the
+                last few years. Zelt helps automate rather than just digitally
+                pushing paper from one desk to another.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col xl:gap-16 gap-12 items-center">
+            <h2 class="xl:text-6xl text-5xl">As seen on</h2>
+
+            <div
+              class="hidden lg:flex lg:items-center lg:justify-center xl:gap-16 lg:gap-5"
+            >
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8"
+              />
+            </div>
+
+            <div
+              class="lg:hidden marquee flex overflow-hidden whitespace-nowrap lg:items-center"
+            >
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+              <img
+                src="./assets/images/maddyness-logo.svg"
+                alt="logo1"
+                class="h-8 px-5"
+              />
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl grid sm:grid-cols-3">
+            <div
+              class="lg:p-10 sm:p-5 p-10 flex flex-col gap-2 sm:border-r sm:border-r-black/05 border-b border-b-b;ack/05 sm:text-left text-center sm:items-start items-center"
+            >
+              <img
+                class="xl:w-12 w-16 xl:pb-12 pb-8"
+                src="./assets/images/message-icon.svg"
+                alt="message-icon"
+              />
+              <h4 class="xl:text-4xl text-3xl">Reliable</h4>
+              <p class="text-lg text-black/50">
+                24/7 Support<br />99.9% uptime
+              </p>
+            </div>
+
+            <div
+              class="lg:p-10 sm:p-5 p-10 flex flex-col gap-2 sm:border-r sm:border-r-black/05 border-b border-b-b;ack/05 sm:text-left text-center sm:items-start items-center"
+            >
+              <img
+                class="xl:w-28 w-32 xl:pb-12 pb-8"
+                src="./assets/images/star-icons.svg"
+                alt="star-icons"
+              />
+              <h4 class="xl:text-4xl text-3xl">Trusted</h4>
+              <p class="text-lg text-black/50">
+                5.0 G2<br />5.0 Trustpilot<br />5.0 Xero App Store
+              </p>
+            </div>
+            <div
+              class="lg:p-10 sm:p-5 p-10 flex flex-col gap-2 sm:text-left text-center sm:items-start items-center"
+            >
+              <img
+                class="xl:w-16 w-20 xl:pb-12 pb-8"
+                src="./assets/images/iso-icon.svg"
+                alt="iso-icon"
+              />
+              <h4 class="xl:text-4xl text-3xl">Secure</h4>
+              <p class="text-lg text-black/50">
+                ISO 27001 certified<br />GDPR compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="relative overflow-hidden w-full py-16 2xl:px-[12%] xl:px-[10%] md:px-[4%] px-5 bg-[#2f2f2f] text-white"
+      >
+        <div class="xl:max-w-[75%] xl:pb-16 pb-12">
+          <h2 class="xl:text-[5.5rem] text-6xl leading-tight font-light pb-10">
+            The employee platform for growth
+          </h2>
+          <button class="bg-orange-300 text-black px-5 py-3 rounded-lg">
+            Watch Zelt in action.
+          </button>
+        </div>
+
+        <div
+          class="xl:pt-16 pt-12 border-t-2 border-t-white/10 w-full flex md:flex-row flex-col md:gap-0 gap-10 md:justify-between"
+        >
+          <div class="flex flex-col xl:gap-10 md:gap-8 gap-5">
+            <div class="w-16">
+              <svg
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 63 28"
+              >
+                <path
+                  d="M37.95 5.3v21.14h-1.71v.92h10.75v-.92h-1.7V.28l-9.44 3.25 2.1 1.77Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M36.27 24.1c-1.54 2.32-4 3.62-7.42 3.62-5.18 0-9.44-3.54-9.44-9.14 0-5.27 3.6-9.64 9.48-9.64 3.45 0 5.84 1.99 5.84 4.62 0 3-2.35 5.64-6.76 7.26 2.1 2.02 4.74 3.36 7.2 3.36.37 0 .73-.04 1.06-.11l.04.04Zm-8.75-3.74a6.6 6.6 0 0 0 1.55-5.59c-.44-2.55-2.1-4.3-3.47-4.3-.95 0-1.5.79-1.5 2.13 0 2.89 1.35 5.57 3.42 7.76ZM10.59 10.5.06 27.36h17.63V18.8h-.03a16.58 16.58 0 0 1-2.18 3.68c-2.68 3.32-5.81 4.04-7.36 4.04L18.58 9.67H1.6v8.45h.04c.79-1.54 1.6-2.83 2.43-3.9 2.39-2.95 5.15-3.7 6.52-3.72ZM63 24.04c-1.36 2.13-3.79 3.68-7.16 3.68-4.38 0-6.1-2.53-6.1-7.22v-9.92h-3.22v-.04l10.56-8.2v7.33h5.18v.9h-5.18v8.09c0 4.19 1 5.74 3.71 5.74.81 0 1.44-.11 2.17-.4l.04.04Z"
+                  fill="#fff"
+                />
+              </svg>
+            </div>
+
+            <div class="flex lg:gap-3 gap-2">
+              <a
+                href="#"
+                class="fill-white bg-white/10 lg:p-4 p-2 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fill-white bg-white/10 lg:p-4 p-2 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fill-white bg-white/10 lg:p-4 p-2 rounded-full"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fill-white bg-white/10 lg:p-4 p-2 rounded-full"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512"
+                >
+                  <path
+                    d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.3 171.1 90.3-76.6 90.3-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex md:gap-12 md:flex-nowrap gap-10 flex-wrap">
+            <div class="flex flex-col gap-1">
+              <h5 class="uppercase mb-4 text-lg">Product</h5>
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Time Off</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Engagement</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Performance</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Payroll</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Benefits</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Payments</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Apps</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Devices</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >People</a
+              >
+            </div>
+            <div class="flex flex-col gap-1">
+              <h5 class="uppercase mb-4 text-lg">RESOURCES</h5>
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Knowledge Center
+              </a>
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Case Studies</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >About Us</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Pricing</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Blog</a
+              >
+            </div>
+            <div class="flex flex-col gap-1">
+              <h5 class="uppercase mb-4 text-lg">Legal</h5>
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Legal</a
+              >
+              <a
+                class="text-sm transition-all duration-150 hover:text-orange-300"
+                href="#"
+                >Security</a
+              >
+            </div>
+          </div>
+
+          <div class="hidden md:flex flex-col gap-2">
+            <div class="p-2 bg-white/10 rounded-xl">
+              <img
+                class="rounded-lg size-20"
+                src="./assets/images/qr.svg"
+                alt="QR Code"
+              />
+            </div>
+            <p class="text-xs">Scan with iPhone</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

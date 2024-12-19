@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Light.woff2);
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Regular.woff2);
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Medium.woff2);
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Semibold.woff2);
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Bold.woff2);
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noi Grotesk Trial";
+    src: url(../dist/assets/fonts/NoiGroteskTrial-Black.woff2);
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  * {
+    font-family: "Noi Grotesk Trial", sans-serif;
+  }
+}
