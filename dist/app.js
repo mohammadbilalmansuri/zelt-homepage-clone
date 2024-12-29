@@ -387,8 +387,8 @@
       timelineConfig.scrollTrigger = {
         trigger: "#section4",
         scroller: "body",
-        start: triggerOn60or40,
-        end: triggerOn60or40,
+        start: triggerOn60or40(),
+        end: triggerOn60or40(),
       };
     }
 
@@ -465,8 +465,8 @@
     scrollTrigger: {
       trigger: "#people-centric",
       scroller: "body",
-      start: triggerOn60or40,
-      end: triggerOn60or40,
+      start: triggerOn60or40(),
+      end: triggerOn60or40(),
     },
   });
 
@@ -478,8 +478,8 @@
     scrollTrigger: {
       trigger: "#enabling",
       scroller: "body",
-      start: triggerOn60or40,
-      end: triggerOn60or40,
+      start: triggerOn60or40(),
+      end: triggerOn60or40(),
     },
   });
 
@@ -491,8 +491,8 @@
     scrollTrigger: {
       trigger: "#automated",
       scroller: "body",
-      start: triggerOn60or40,
-      end: triggerOn60or40,
+      start: triggerOn60or40(),
+      end: triggerOn60or40(),
     },
   });
 
@@ -548,8 +548,8 @@
     scrollTrigger: {
       trigger: "#section7",
       scroller: "body",
-      start: triggerOn60or40,
-      end: triggerOn60or40,
+      start: triggerOn60or40(),
+      end: triggerOn60or40(),
     },
   });
 
