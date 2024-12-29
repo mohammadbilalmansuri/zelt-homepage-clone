@@ -1,46 +1,87 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Light.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044000/zelt/fonts/NoiGroteskTrial-Light.woff2);
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Regular.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044002/zelt/fonts/NoiGroteskTrial-Regular.woff2);
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Medium.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044001/zelt/fonts/NoiGroteskTrial-Medium.woff2);
     font-weight: 500;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Semibold.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044003/zelt/fonts/NoiGroteskTrial-Semibold.woff2);
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Bold.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043999/zelt/fonts/NoiGroteskTrial-Bold.woff2);
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url(../dist/fonts/NoiGroteskTrial-Black.woff2);
+    src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043998/zelt/fonts/NoiGroteskTrial-Black.woff2);
     font-weight: 800;
     font-style: normal;
   }
 
   * {
+    box-sizing: border-box;
     font-family: "Noi Grotesk Trial", sans-serif;
   }
+
+  ::selection {
+    @apply bg-orange text-black;
+  }
 }
+
+@tailwind components;
+
+@layer components {
+  .gradientbg {
+    @apply bg-gradient-to-r from-[#E3DDD8] to-[#E2DED8];
+  }
+
+  .h1 {
+    @apply xl:text-8xl lg:text-7xl md:text-6xl xs:text-5xl text-4xl;
+  }
+
+  .h2 {
+    @apply xl:text-7xl lg:text-6xl md:text-5xl xs:text-4xl text-3xl;
+  }
+
+  .h3 {
+    @apply xl:text-6xl lg:text-5xl md:text-4xl xs:text-3xl text-2xl;
+  }
+
+  .btn-orange {
+    @apply px-5 py-3 text-black bg-orange hover:bg-orange/85 transition-all rounded-lg text-lg;
+  }
+
+  .btn-black {
+    @apply px-5 py-3 bg-black/90 hover:bg-black text-white hover:text-white rounded-lg text-lg;
+  }
+
+  .t1 {
+    @apply xl:text-2xl lg:text-xl text-lg;
+  }
+
+  .t2 {
+    @apply lg:text-xl text-lg;
+  }
+}
+
+@tailwind utilities;

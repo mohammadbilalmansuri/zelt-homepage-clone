@@ -9,4 +9,4 @@ A replica of the Zelt home page, developed to practice and understand how animat
 - JavaScript
 - HTML5 Canvas
 - GSAP with ScrollTrigger
-- Locomotive Scroll
+- Lenis
