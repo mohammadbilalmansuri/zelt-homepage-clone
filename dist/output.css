@@ -562,7 +562,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044000/zelt/fonts/NoiGroteskTrial-Light.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044000/zelt/fonts/NoiGroteskTrial-Light.woff2");
 
   font-weight: 300;
 
@@ -572,7 +572,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044002/zelt/fonts/NoiGroteskTrial-Regular.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044002/zelt/fonts/NoiGroteskTrial-Regular.woff2");
 
   font-weight: 400;
 
@@ -582,7 +582,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044001/zelt/fonts/NoiGroteskTrial-Medium.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044001/zelt/fonts/NoiGroteskTrial-Medium.woff2");
 
   font-weight: 500;
 
@@ -592,7 +592,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044003/zelt/fonts/NoiGroteskTrial-Semibold.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044003/zelt/fonts/NoiGroteskTrial-Semibold.woff2");
 
   font-weight: 600;
 
@@ -602,7 +602,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043999/zelt/fonts/NoiGroteskTrial-Bold.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043999/zelt/fonts/NoiGroteskTrial-Bold.woff2");
 
   font-weight: 700;
 
@@ -612,7 +612,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url(https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043998/zelt/fonts/NoiGroteskTrial-Black.woff2);
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735043998/zelt/fonts/NoiGroteskTrial-Black.woff2");
 
   font-weight: 800;
 
