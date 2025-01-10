@@ -45,6 +45,10 @@
   ::selection {
     @apply bg-orange text-black;
   }
+
+  video {
+    filter: grayscale(0);
+  }
 }
 
 @tailwind components;

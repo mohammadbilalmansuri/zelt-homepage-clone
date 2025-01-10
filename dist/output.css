@@ -638,6 +638,10 @@ video {
   color: rgb(18 23 24 / var(--tw-text-opacity, 1));
 }
 
+video {
+  filter: grayscale(0);
+}
+
 .gradientbg {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #e3ddd8 var(--tw-gradient-from-position);

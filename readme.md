@@ -7,6 +7,6 @@ A replica of the Zelt home page, developed to practice and understand how animat
 - HTML
 - Tailwind CSS
 - JavaScript
-- HTML5 Canvas
+- Canvas API
 - GSAP with ScrollTrigger
 - Lenis
