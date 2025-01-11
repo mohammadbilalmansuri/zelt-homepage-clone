@@ -29,7 +29,7 @@
   const imagesUrls = Array.from(
     { length: 118 },
     (_, i) =>
-      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735043877/zelt/canvas/${String(
+      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/canvas/${String(
         i + 1
       )}.webp`
   );
@@ -218,7 +218,7 @@
           "A next-generation HR software that contains your employee master data and integrates directly with time off, payroll, benefits, and more. Minimize time spent on admin using automation and employee self-service.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
       },
     ],
     [
@@ -229,7 +229,7 @@
           "Automate everything payroll-related, from employee payments to pension and HMRC submissions. Integrates directly with the HR software including hours worked and holidays and make recording benefits a breeze, whether you payroll benefits or submit P11Ds.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
       },
     ],
     [
@@ -240,7 +240,7 @@
           "Manage pension and healthcare centrally. Automate the busy work of adding and removing employees. Give your team better visibility into their benefits and empower them to make choices themselves without having to worry about reconciling payroll deductions.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
       },
     ],
     [
@@ -251,7 +251,7 @@
           "After approving payroll and contractor invoices, make local salary and global contractor payments in one go with just a few clicks.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
       },
     ],
     [
@@ -262,7 +262,7 @@
           "Request, approve and keep track of time and attendance seamlessly directly in your HR software. Whether it's holiday, sick days, work from home, parental leave or unpaid holiday. Create custom policies and assign employees by rule. Get requests directly in Slack or mobile app.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
       },
     ],
     [
@@ -273,7 +273,7 @@
           "Manage access to your business apps centrally. Protect your data and save time by managing employee accounts automatically when on and offboarding employees. Spot inactive users and monitor access from outside of your organisation.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
       },
     ],
     [
@@ -284,7 +284,7 @@
           "Embed device as a service directly into your people processes. Equip your team with a few clicks and stop wasting time on shipping, set up, collections, storage and support. Remotely configure employee computers and apply security policies to protect company IP. The better alternative to complicated MDM tools and expensive outsourcing.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
       },
     ],
     [
@@ -295,7 +295,7 @@
           "Unlock the insights needed for growth. Launch surveys in a matter of minutes, directly in your HR software. Understand employee's onboarding experience, engagement over lifecycle or run regular check-ins. Turn insights into patterns and trends with Impact analysis.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
       },
     ],
     [
@@ -306,7 +306,7 @@
           "Empower your people to perform, grow and succeed: Elevate the performance review experience, providing both people teams and managers with a toolkit for the continuous alignment of goals, feedback, and expectations in an engaging and transparent manner.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735466500/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
       },
     ],
   ]);
