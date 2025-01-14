@@ -87,7 +87,12 @@
 
   window.addEventListener(
     "resize",
-    debounce(() => window.location.reload(), 50)
+    debounce(
+      () => () => {
+        ScrollTrigger.refresh();
+      },
+      50
+    )
   );
 
   // Canvas animation
