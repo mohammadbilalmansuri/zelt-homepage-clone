@@ -23,8 +23,8 @@
   // Canvas Setup
   let canvas = document.querySelector("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
 
   const imagesUrls = Array.from(
     { length: 118 },
