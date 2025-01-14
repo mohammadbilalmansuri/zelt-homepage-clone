@@ -24,11 +24,11 @@
   let canvas = document.querySelector("canvas");
   const context = canvas.getContext("2d");
 
-  const resizeCanvas = () => {
+  const setCanvasDimentions = () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
   };
-  resizeCanvas();
+  setCanvasDimentions();
 
   const imagesUrls = Array.from(
     { length: 118 },
@@ -92,8 +92,8 @@
   window.addEventListener(
     "resize",
     debounce(() => {
-      resizeCanvas();
-      requestAnimationFrame(render);
+      setCanvasDimentions();
+      render();
       ScrollTrigger.refresh();
     }, 50)
   );
