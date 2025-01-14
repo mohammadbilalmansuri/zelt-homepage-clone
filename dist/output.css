@@ -836,8 +836,8 @@ video {
   top: 30vh;
 }
 
-.top-\[90dvh\] {
-  top: 90dvh;
+.top-\[90vh\] {
+  top: 90vh;
 }
 
 .z-0 {
@@ -915,10 +915,6 @@ video {
 
 .h-7 {
   height: 1.75rem;
-}
-
-.h-dvh {
-  height: 100dvh;
 }
 
 .h-screen {
