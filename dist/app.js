@@ -23,8 +23,12 @@
   // Canvas Setup
   let canvas = document.querySelector("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+
+  const resizeCanvas = () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  };
+  resizeCanvas();
 
   const imagesUrls = Array.from(
     { length: 118 },
@@ -87,12 +91,11 @@
 
   window.addEventListener(
     "resize",
-    debounce(
-      () => () => {
-        ScrollTrigger.refresh();
-      },
-      50
-    )
+    debounce(() => {
+      resizeCanvas();
+      requestAnimationFrame(render);
+      ScrollTrigger.refresh();
+    }, 50)
   );
 
   // Canvas animation
