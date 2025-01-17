@@ -24,11 +24,11 @@
   let canvas = document.querySelector("canvas");
   const context = canvas.getContext("2d");
 
-  const setCanvasDimentions = () => {
+  const setCanvasSize = () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
   };
-  setCanvasDimentions();
+  setCanvasSize();
 
   const imagesUrls = Array.from(
     { length: 118 },
@@ -83,20 +83,25 @@
   function debounce(func, wait) {
     let timeout;
     return function (...args) {
-      const context = this;
       clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(context, args), wait);
+      timeout = setTimeout(() => func(...args), wait);
     };
   }
 
-  window.addEventListener(
-    "resize",
+  // Resize Observer
+  let lastWidth = window.innerWidth;
+  const resizeObserver = new ResizeObserver(
     debounce(() => {
-      setCanvasDimentions();
-      render();
-      ScrollTrigger.refresh();
-    }, 50)
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        setCanvasSize();
+        render();
+        ScrollTrigger.refresh();
+      }
+    }, 100)
   );
+  resizeObserver.observe(document.documentElement);
 
   // Canvas animation
   gsap.to(imageSeq, {
@@ -117,8 +122,8 @@
     trigger: "#hero canvas",
     pin: true,
     scroller: "body",
-    start: `top top`,
-    end: `300% top`,
+    start: "top top",
+    end: "300% top",
   });
 
   // Section 1 animation
