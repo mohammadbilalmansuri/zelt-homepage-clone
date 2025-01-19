@@ -562,7 +562,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Light.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_light.woff2");
 
   font-weight: 300;
 
@@ -572,7 +572,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Regular.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_regular.woff2");
 
   font-weight: 400;
 
@@ -582,7 +582,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Medium.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_medium.woff2");
 
   font-weight: 500;
 
@@ -592,7 +592,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Semibold.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_semibold.woff2");
 
   font-weight: 600;
 
@@ -602,7 +602,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Bold.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_bold.woff2");
 
   font-weight: 700;
 
@@ -612,7 +612,7 @@ video {
 @font-face {
   font-family: "Noi Grotesk Trial";
 
-  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Black.woff2");
+  src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_black.woff2");
 
   font-weight: 800;
 
@@ -821,6 +821,53 @@ video {
   }
 }
 
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgb(18 23 24 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .tabBtn {
+    gap: 0.25rem;
+    border-radius: 0px;
+    background-color: transparent;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: rgb(18 23 24 / 0.6);
+  }
+}
+
+.activeTabBtn {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 186 116 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(18 23 24 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .activeTabBtn {
+    background-color: transparent;
+  }
+
+  .activeTabBtn span:first-child {
+    opacity: 1;
+  }
+}
+
 .fixed {
   position: fixed;
 }
@@ -942,8 +989,8 @@ video {
   width: 75%;
 }
 
-.w-8 {
-  width: 2rem;
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-\[70\%\] {
@@ -1032,6 +1079,10 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-1\.5 {
+  gap: 0.375rem;
 }
 
 .gap-10 {
@@ -1192,11 +1243,6 @@ video {
   padding-right: 1.25rem;
 }
 
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1300,10 +1346,6 @@ video {
 
 .opacity-0 {
   opacity: 0;
-}
-
-.opacity-100 {
-  opacity: 1;
 }
 
 .shadow {
@@ -1701,10 +1743,6 @@ video {
     flex-wrap: nowrap;
   }
 
-  .lg\:gap-1 {
-    gap: 0.25rem;
-  }
-
   .lg\:gap-10 {
     gap: 2.5rem;
   }
@@ -1719,6 +1757,10 @@ video {
 
   .lg\:gap-16 {
     gap: 4rem;
+  }
+
+  .lg\:gap-2 {
+    gap: 0.5rem;
   }
 
   .lg\:gap-3 {
@@ -1737,14 +1779,6 @@ video {
     gap: 2rem;
   }
 
-  .lg\:rounded-none {
-    border-radius: 0px;
-  }
-
-  .lg\:bg-transparent {
-    background-color: transparent;
-  }
-
   .lg\:p-12 {
     padding: 3rem;
   }
@@ -1759,11 +1793,6 @@ video {
 
   .lg\:p-8 {
     padding: 2rem;
-  }
-
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .lg\:px-16 {
@@ -1803,10 +1832,6 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-black\/60 {
-    color: rgb(18 23 24 / 0.6);
   }
 }
 

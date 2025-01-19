@@ -16,8 +16,8 @@
   }
 
   window.addEventListener("unload", () => {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     window.scrollTo(0, 0);
-    ScrollTrigger.refresh();
   });
 
   // Canvas Setup
@@ -33,7 +33,7 @@
   const imagesUrls = Array.from(
     { length: 118 },
     (_, i) =>
-      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/canvas/${String(
+      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256335/zelt/images/canvas/${String(
         i + 1
       )}.webp`
   );
@@ -82,7 +82,7 @@
 
   function debounce(func, wait) {
     let timeout;
-    return function (...args) {
+    return (...args) => {
       clearTimeout(timeout);
       timeout = setTimeout(() => func(...args), wait);
     };
@@ -90,7 +90,7 @@
 
   // Resize Observer
   let lastWidth = window.innerWidth;
-  const resizeObserver = new ResizeObserver(
+  new ResizeObserver(
     debounce(() => {
       const currentWidth = window.innerWidth;
       if (currentWidth !== lastWidth) {
@@ -100,8 +100,7 @@
         ScrollTrigger.refresh();
       }
     }, 100)
-  );
-  resizeObserver.observe(document.documentElement);
+  ).observe(document.body);
 
   // Canvas animation
   gsap.to(imageSeq, {
@@ -109,11 +108,11 @@
     snap: "frame",
     ease: "none",
     scrollTrigger: {
-      scrub: 0.15,
       trigger: "#hero canvas",
-      start: "top top",
-      end: "300% top",
       scroller: "body",
+      start: "top top",
+      end: "top -300%",
+      scrub: 0.1,
     },
     onUpdate: render,
   });
@@ -123,7 +122,7 @@
     pin: true,
     scroller: "body",
     start: "top top",
-    end: "300% top",
+    end: "top -300%",
   });
 
   // Section 1 animation
@@ -163,7 +162,6 @@
   });
 
   // Mobile Header Popup Event
-
   const popup = document.querySelector("#popup");
 
   function togglePopup(open) {
@@ -199,7 +197,6 @@
   );
 
   // Section 3 marquee animation
-
   let currentScroll = 0;
   let isScrollingDown = true;
 
@@ -221,7 +218,6 @@
   });
 
   // Section 4 Tabs
-
   const tabsData = new Map([
     [
       1,
@@ -231,7 +227,7 @@
           "A next-generation HR software that contains your employee master data and integrates directly with time off, payroll, benefits, and more. Minimize time spent on admin using automation and employee self-service.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab1.webp",
       },
     ],
     [
@@ -242,7 +238,7 @@
           "Automate everything payroll-related, from employee payments to pension and HMRC submissions. Integrates directly with the HR software including hours worked and holidays and make recording benefits a breeze, whether you payroll benefits or submit P11Ds.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab2.webp",
       },
     ],
     [
@@ -253,7 +249,7 @@
           "Manage pension and healthcare centrally. Automate the busy work of adding and removing employees. Give your team better visibility into their benefits and empower them to make choices themselves without having to worry about reconciling payroll deductions.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab1.webp",
       },
     ],
     [
@@ -264,7 +260,7 @@
           "After approving payroll and contractor invoices, make local salary and global contractor payments in one go with just a few clicks.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab2.webp",
       },
     ],
     [
@@ -275,7 +271,7 @@
           "Request, approve and keep track of time and attendance seamlessly directly in your HR software. Whether it's holiday, sick days, work from home, parental leave or unpaid holiday. Create custom policies and assign employees by rule. Get requests directly in Slack or mobile app.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab1.webp",
       },
     ],
     [
@@ -286,7 +282,7 @@
           "Manage access to your business apps centrally. Protect your data and save time by managing employee accounts automatically when on and offboarding employees. Spot inactive users and monitor access from outside of your organisation.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab2.webp",
       },
     ],
     [
@@ -297,7 +293,7 @@
           "Embed device as a service directly into your people processes. Equip your team with a few clicks and stop wasting time on shipping, set up, collections, storage and support. Remotely configure employee computers and apply security policies to protect company IP. The better alternative to complicated MDM tools and expensive outsourcing.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab1.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab1.webp",
       },
     ],
     [
@@ -308,7 +304,7 @@
           "Unlock the insights needed for growth. Launch surveys in a matter of minutes, directly in your HR software. Understand employee's onboarding experience, engagement over lifecycle or run regular check-ins. Turn insights into patterns and trends with Impact analysis.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab2.webp",
       },
     ],
     [
@@ -319,34 +315,20 @@
           "Empower your people to perform, grow and succeed: Elevate the performance review experience, providing both people teams and managers with a toolkit for the continuous alignment of goals, feedback, and expectations in an engaging and transparent manner.",
         link: "#",
         image:
-          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/zelt/zelt-tab2.webp",
+          "https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737256317/zelt/images/tab1.webp",
       },
     ],
   ]);
 
-  const tabTitles = document.querySelector("#tab-titles");
-  const tabContent = document.querySelector("#tab-content");
+  const tabTitles = document.getElementById("tab-titles");
+  const tabContent = document.getElementById("tab-content");
 
   function updateActiveButtonStyle(activeButton) {
-    tabTitles.querySelectorAll("button").forEach((button) => {
-      if (window.innerWidth >= 1024) {
-        button.classList.replace("text-black", "lg:text-black/60");
-        button
-          .querySelector("span:nth-child(1)")
-          .classList.replace("opacity-100", "opacity-0");
-      } else {
-        button.classList.replace("bg-orange", "bg-white");
-      }
-    });
+    tabTitles
+      .querySelectorAll("button")
+      .forEach((button) => button.classList.remove("activeTabBtn"));
 
-    if (window.innerWidth >= 1024) {
-      activeButton.classList.replace("lg:text-black/60", "text-black");
-      activeButton
-        .querySelector("span:nth-child(1)")
-        .classList.replace("opacity-0", "opacity-100");
-    } else {
-      activeButton.classList.replace("bg-white", "bg-orange");
-    }
+    activeButton.classList.add("activeTabBtn");
   }
 
   function updateTabContent(tabKey) {
@@ -365,27 +347,31 @@
   `;
   }
 
-  function initializeTabs() {
-    tabsData.forEach((tab, key) => {
-      const button = document.createElement("button");
-      button.className =
-        "flex items-center lg:gap-1 gap-2 lg:text-black/60 text-black lg:text-lg lg:bg-transparent bg-white lg:rounded-none rounded-md lg:px-0 px-4 lg:py-0 py-1.5";
-      button.id = key;
-      button.innerHTML = `<span class="opacity-0 lg:block hidden">●</span><span>${tab.title}</span>`;
-      tabTitles.appendChild(button);
+  tabsData.forEach((tab, key) => {
+    const button = document.createElement("button");
+    button.className = "tabBtn";
+    button.id = key;
+    button.innerHTML = `<span class="opacity-0 lg:block hidden">●</span><span>${tab.title}</span>`;
+    tabTitles.appendChild(button);
+    if (key === 1) {
+      updateActiveButtonStyle(button);
+      updateTabContent(key);
+    }
+  });
 
-      if (key === 1) {
+  tabTitles.addEventListener(
+    "click",
+    debounce((event) => {
+      const button = event.target.closest("button");
+      if (button) {
         updateActiveButtonStyle(button);
-        updateTabContent(key);
+        updateTabContent(parseInt(button.id));
+        doTabAnimation();
       }
-    });
-  }
+    }, 200)
+  );
 
-  const triggerOn60or40 = () => {
-    return window.innerWidth >= 640 ? "top 60%" : "top 40%";
-  };
-
-  function doTabAnimation(isInitial = false) {
+  function doTabAnimation(isInitial = false, triggerOn) {
     const timelineConfig = {
       onComplete: () => {
         document
@@ -400,117 +386,122 @@
       timelineConfig.scrollTrigger = {
         trigger: "#section4",
         scroller: "body",
-        start: triggerOn60or40(),
-        end: triggerOn60or40(),
+        start: triggerOn,
+        end: triggerOn,
       };
     }
 
-    const tabTl = gsap.timeline(timelineConfig);
-
-    if (isInitial) {
-      tabTl.from(
-        "#section4 h2",
+    gsap
+      .timeline(timelineConfig)
+      .from(
+        "#tab-content img",
         {
-          y: 50,
+          scale: 0.75,
           opacity: 0,
           duration: 0.75,
         },
         "tabAnim"
+      )
+      .from(
+        "#tab-content div:last-child *",
+        {
+          y: 50,
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.2,
+        },
+        "tabAnim"
       );
-    }
-
-    tabTl.from(
-      "#tab-content img",
-      {
-        scale: 0.75,
-        opacity: 0,
-        duration: 0.75,
-      },
-      "tabAnim"
-    );
-
-    tabTl.from(
-      "#tab-content div:last-child *",
-      {
-        y: 50,
-        opacity: 0,
-        duration: 0.75,
-        stagger: 0.2,
-      },
-      "tabAnim"
-    );
   }
 
-  initializeTabs();
-  doTabAnimation(true);
+  function animateWithMatchMedia(triggerOn) {
+    // Section 5
+    gsap.from("#people-centric .texts-div *", {
+      y: 50,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: "#people-centric",
+        scroller: "body",
+        start: triggerOn,
+        end: triggerOn,
+      },
+    });
 
-  tabTitles.addEventListener(
-    "click",
-    debounce((event) => {
-      const button = event.target.closest("button");
-      if (button) {
-        updateActiveButtonStyle(button);
-        updateTabContent(parseInt(button.id));
-        doTabAnimation();
-      }
-    }, 200)
+    gsap.from("#enabling .texts-div *", {
+      y: 50,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: "#enabling",
+        scroller: "body",
+        start: triggerOn,
+        end: triggerOn,
+      },
+    });
+
+    gsap.from("#automated .texts-div *", {
+      y: 50,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: "#automated",
+        scroller: "body",
+        start: triggerOn,
+        end: triggerOn,
+      },
+    });
+
+    // Section 7
+    gsap.from("#section7 .texts-div *", {
+      y: 50,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: "#section7",
+        scroller: "body",
+        start: triggerOn,
+        end: triggerOn,
+      },
+    });
+  }
+
+  function animatePinSectionWithMatchMedia(y) {
+    // Section 6 Pin
+    gsap.to(".dd-left", {
+      y,
+      scrollTrigger: {
+        trigger: "#section6",
+        scroller: "body",
+        start: "top 25%",
+        end: "top -25%",
+        scrub: true,
+        pin: true,
+      },
+    });
+  }
+
+  const gsapmm = gsap.matchMedia();
+  gsapmm.add("(min-width: 640px)", () => {
+    doTabAnimation(true, "top 60%");
+    animateWithMatchMedia("top 60%");
+  });
+  gsapmm.add("(max-width: 639px)", () => {
+    doTabAnimation(true, "top 40%");
+    animateWithMatchMedia("top 50%");
+  });
+  gsapmm.add("(min-width: 1024px)", () =>
+    animatePinSectionWithMatchMedia(-436)
+  );
+  gsapmm.add("(min-width: 768px) and (max-width: 1023px)", () =>
+    animatePinSectionWithMatchMedia(-300)
   );
 
-  // Section 5
-
-  gsap.from("#section5 h2", {
-    y: 50,
-    opacity: 0,
-    duration: 0.75,
-    scrollTrigger: {
-      trigger: "#section5",
-      scroller: "body",
-      start: "top 75%",
-      end: "top 75%",
-    },
-  });
-
-  gsap.from("#people-centric .texts-div *", {
-    y: 50,
-    opacity: 0,
-    duration: 0.75,
-    stagger: 0.15,
-    scrollTrigger: {
-      trigger: "#people-centric",
-      scroller: "body",
-      start: triggerOn60or40(),
-      end: triggerOn60or40(),
-    },
-  });
-
-  gsap.from("#enabling .texts-div *", {
-    y: 50,
-    opacity: 0,
-    duration: 0.75,
-    stagger: 0.15,
-    scrollTrigger: {
-      trigger: "#enabling",
-      scroller: "body",
-      start: triggerOn60or40(),
-      end: triggerOn60or40(),
-    },
-  });
-
-  gsap.from("#automated .texts-div *", {
-    y: 50,
-    opacity: 0,
-    duration: 0.75,
-    stagger: 0.15,
-    scrollTrigger: {
-      trigger: "#automated",
-      scroller: "body",
-      start: triggerOn60or40(),
-      end: triggerOn60or40(),
-    },
-  });
-
   // Section 6
-
   gsap.from("#section6 .texts-div *", {
     y: 50,
     opacity: 0,
@@ -537,41 +528,12 @@
     },
   });
 
-  if (window.innerWidth >= 768) {
-    gsap.to(".dd-left", {
-      y: window.innerWidth >= 1024 ? -430 : -380,
-      scrollTrigger: {
-        trigger: "#section6",
-        scroller: "body",
-        start: "top 25%",
-        end: "top -25%",
-        scrub: true,
-        pin: true,
-      },
-    });
-  }
-
-  // Section 7
-
-  gsap.from("#section7 .texts-div *", {
+  // Section 8
+  gsap.from("#section8 #top > div", {
     y: 50,
     opacity: 0,
     duration: 0.75,
     stagger: 0.15,
-    scrollTrigger: {
-      trigger: "#section7",
-      scroller: "body",
-      start: triggerOn60or40(),
-      end: triggerOn60or40(),
-    },
-  });
-
-  // Section 8
-
-  gsap.from("#section8 #top", {
-    y: 50,
-    opacity: 0,
-    duration: 0.75,
     scrollTrigger: {
       trigger: "#section8",
       scroller: "body",
@@ -580,10 +542,11 @@
     },
   });
 
-  gsap.from("#section8 #middle", {
+  gsap.from("#section8 #middle > *", {
     y: 50,
     opacity: 0,
     duration: 0.75,
+    stagger: 0.15,
     scrollTrigger: {
       trigger: "#section8 #middle",
       scroller: "body",

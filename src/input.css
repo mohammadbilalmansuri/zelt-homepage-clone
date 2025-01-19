@@ -2,37 +2,37 @@
 @layer base {
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Light.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_light.woff2");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Regular.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Medium.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_medium.woff2");
     font-weight: 500;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Semibold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Bold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
     font-family: "Noi Grotesk Trial";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/zelt/fonts/NoiGroteskTrial-Black.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_black.woff2");
     font-weight: 800;
     font-style: normal;
   }
@@ -83,6 +83,18 @@
 
   .t2 {
     @apply lg:text-xl text-lg;
+  }
+
+  .tabBtn {
+    @apply flex items-center lg:gap-1 gap-2 lg:text-black/60 text-black lg:text-lg lg:bg-transparent bg-white lg:rounded-none rounded-md lg:px-0 px-4 lg:py-0 py-1.5;
+  }
+
+  .activeTabBtn {
+    @apply text-black lg:bg-transparent bg-orange;
+  }
+
+  .activeTabBtn span:first-child {
+    @apply lg:opacity-100;
   }
 }
 
