@@ -1,4 +1,5 @@
 @tailwind base;
+
 @layer base {
   @font-face {
     font-family: "Noi Grotesk Trial";
@@ -6,30 +7,35 @@
     font-weight: 300;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Noi Grotesk Trial";
     src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Noi Grotesk Trial";
     src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_medium.woff2");
     font-weight: 500;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Noi Grotesk Trial";
     src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255993/zelt/fonts/noigrotesktrial_semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Noi Grotesk Trial";
     src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Noi Grotesk Trial";
     src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737255992/zelt/fonts/noigrotesktrial_black.woff2");
@@ -52,6 +58,7 @@
 }
 
 @tailwind components;
+
 @layer components {
   .gradientbg {
     @apply bg-gradient-to-r from-[#E3DDD8] to-[#E2DED8];
